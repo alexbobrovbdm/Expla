@@ -576,9 +576,8 @@ select option{background:#1a1a1c}
 /* =============================================================
    CONFIG — set before sharing
    ============================================================= */
+// Only this URL is needed in the HTML — token and Telegram logic live in Apps Script (server-side, not visible to anyone)
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwQf3JmwR8iE71V4q7m_vjW72XXgj4QoFiqcf-JCjaivw4z1XKTSFh_Kor1HsDWqYciBw/exec';
-const TG_TOKEN  = '8245624744:AAEPn8vAk394Bz3x7yl7DRyqPq3ThOBrqwg';
-const TG_CHAT   = '8439197756';
 
 /* =============================================================
    TRANSLATIONS
@@ -911,40 +910,14 @@ async function submitForm() {
   btn.classList.add('loading');
   btn.disabled = true;
   var data = collectData();
-  await Promise.allSettled([sendSheets(data), sendTelegram(data)]);
+  await sendSheets(data);
   btn.classList.remove('loading');
   btn.disabled = false;
   goStep(TOTAL + 1);
 }
 
 async function sendSheets(data) {
-  if (!SHEET_URL || SHEET_URL.indexOf('YOUR_') > -1) return;
   try { await fetch(SHEET_URL, { method:'POST', body: JSON.stringify(data) }); } catch(e) {}
-}
-
-async function sendTelegram(data) {
-  if (!TG_TOKEN || TG_TOKEN.indexOf('YOUR_') > -1) return;
-  var msg = [
-    '🟢 *New Brand Application — expla\'*','',
-    '👤 *AM:* ' + data['AM Name'] + ' | ' + data['AM Email'] + ' | ' + data['AM Telegram'],
-    '🎰 *Brand:* ' + data['Brand Name'] + ' — ' + data['Brand URL'],
-    '📅 *Launch:* ' + data['Brand Launch Date'],
-    '📄 *License:* ' + data['License'] + (data['License Note'] ? ' — ' + data['License Note'] : ''),
-    '⚙️ *Software:* ' + data['Software'],
-    '🌍 *Tiers:* ' + data['Tiers'] + ' | *GEOs:* ' + data['GEOs'],
-    '📊 *Avg CR:* ' + data['Avg CR'],
-    '🕐 *Experience:* ' + data['Experience'],
-    '🔗 *Affiliate URL:* ' + data['Affiliate URL'],
-    '🔌 *API:* ' + data['API'],
-    '💰 *Fixed fees:* ' + data['Fixed Fees'],
-    data['Comment'] ? '💬 *Comment:* ' + data['Comment'] : ''
-  ].filter(Boolean).join('\n');
-  try {
-    await fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ chat_id: TG_CHAT, text: msg, parse_mode:'Markdown' })
-    });
-  } catch(e) {}
 }
 
 /* =============================================================
