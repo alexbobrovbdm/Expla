@@ -1054,5 +1054,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-HTMLEOF
-echo "done"
+
