@@ -16,8 +16,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:0}
-
-/* topbar */
 .topbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:rgba(14,14,16,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.5px;color:#fff;text-decoration:none}
 .logo span{color:var(--accent)}
@@ -25,26 +23,16 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .lang-btn{background:none;border:none;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;padding:5px 12px;border-radius:5px;transition:all .2s}
 .lang-btn:hover{color:#fff}
 .lang-btn.active{background:var(--accent);color:#0E0E10;font-weight:600}
-
-/* progress */
 .progress-wrap{position:fixed;top:57px;left:0;right:0;z-index:99;height:3px;background:var(--border)}
 .progress-bar{height:100%;background:var(--accent);transition:width .4s cubic-bezier(.4,0,.2,1);box-shadow:0 0 12px rgba(41,199,125,.5)}
-
-/* shell */
 .shell{position:relative;z-index:1;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:120px 24px 80px}
 .form-wrap{width:100%;max-width:var(--step-max)}
-
-/* steps */
 .step{display:none;animation:fadeUp .35s ease forwards}
 .step.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-/* step header */
 .step-eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 .step-title{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,42px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:12px}
 .step-sub{color:var(--muted);font-size:15px;margin-bottom:40px;max-width:520px;line-height:1.65}
-
-/* intro card */
 .intro-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:48px;margin-bottom:32px;position:relative;overflow:hidden}
 .intro-card::after{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(41,199,125,.12),transparent 70%);border-radius:50%;pointer-events:none}
 .intro-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid rgba(41,199,125,.2);border-radius:100px;padding:6px 14px;font-size:13px;font-weight:500;color:var(--accent);margin-bottom:24px}
@@ -56,8 +44,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .stat-box .val{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--accent)}
 .stat-box .lbl{font-size:12px;color:var(--muted);margin-top:2px}
 .stat-box .sub-lbl{font-size:10px;color:rgba(255,255,255,.25);margin-top:3px;letter-spacing:.03em}
-
-/* fields */
 .field-group{display:grid;gap:20px;margin-bottom:8px}
 .field-group.two-col{grid-template-columns:1fr 1fr}
 @media(max-width:600px){.field-group.two-col{grid-template-columns:1fr}}
@@ -65,15 +51,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .field label{font-size:13px;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:.01em}
 .field label .req{color:var(--accent);margin-left:2px}
 .field .hint{font-size:12px;color:var(--muted);line-height:1.5;margin-top:-2px}
-
 input[type=text],input[type=email],input[type=url],input[type=date],textarea,select{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;padding:13px 16px;width:100%;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
 input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(41,199,125,.12)}
 input::placeholder,textarea::placeholder{color:var(--muted)}
 textarea{resize:vertical;min-height:100px}
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234B4B4D' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
 select option{background:#1a1a1c}
-
-/* choice items */
 .choice-group{display:flex;flex-direction:column;gap:10px}
 .choice-item{display:flex;align-items:flex-start;gap:12px;cursor:pointer;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);transition:border-color .2s,background .2s;user-select:none}
 .choice-item:hover{border-color:rgba(41,199,125,.3);background:rgba(41,199,125,.03)}
@@ -81,28 +64,18 @@ select option{background:#1a1a1c}
 .choice-item.selected{border-color:var(--accent);background:var(--accent-dim)}
 .choice-label{font-size:14px;line-height:1.5}
 .choice-label small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-
-/* tier pills */
 .tier-group{display:flex;flex-wrap:wrap;gap:8px}
 .tier-pill{padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg2);color:rgba(255,255,255,.7);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;user-select:none}
 .tier-pill:hover{border-color:rgba(41,199,125,.4)}
 .tier-pill.active{background:var(--accent);border-color:var(--accent);color:#0E0E10;font-weight:600}
-
-/* check grid */
 .check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
 .check-item{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .2s,background .2s;user-select:none;font-size:13px}
 .check-item:hover{border-color:rgba(41,199,125,.3)}
 .check-item.selected{border-color:var(--accent);background:var(--accent-dim)}
 .check-item input{width:15px;height:15px;accent-color:var(--accent);padding:0;background:none;border:none;flex-shrink:0}
-
-/* conditional */
 .conditional-field{display:none;margin-top:12px}
 .conditional-field.visible{display:block}
-
-/* divider */
 .section-divider{height:1px;background:var(--border);margin:32px 0}
-
-/* nav */
 .nav-row{display:flex;align-items:center;justify-content:space-between;margin-top:40px;gap:12px}
 .nav-row.intro-nav{justify-content:flex-end}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);border:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;letter-spacing:.01em}
@@ -114,43 +87,28 @@ select option{background:#1a1a1c}
 .btn-lg{padding:16px 36px;font-size:16px;border-radius:var(--radius)}
 .btn svg{width:18px;height:18px;flex-shrink:0}
 .step-counter{font-size:13px;color:var(--muted)}
-
-/* error */
 .field-error{font-size:12px;color:var(--error);margin-top:4px;display:none}
 .field.has-error input,.field.has-error textarea,.field.has-error select{border-color:var(--error)}
 .field.has-error .field-error{display:block}
-
-/* file note */
 .file-note{background:rgba(41,199,125,.06);border:1px dashed rgba(41,199,125,.25);border-radius:var(--radius-sm);padding:16px 18px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.6}
 .file-note strong{color:var(--accent)}
-
-/* success */
 .success-wrap{text-align:center;padding:64px 32px}
 .success-icon{width:72px;height:72px;background:var(--accent-dim);border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 32px}
 .success-icon svg{width:32px;height:32px;color:var(--accent)}
 .success-wrap h2{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;margin-bottom:12px}
 .success-wrap p{color:var(--muted);font-size:15px;max-width:380px;margin:0 auto}
-
-/* dots */
 .dots{display:flex;gap:6px;justify-content:center;margin-bottom:40px}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--gray);transition:all .3s}
 .dot.done{background:rgba(41,199,125,.4)}
 .dot.active{background:var(--accent);width:20px;border-radius:3px}
-
-/* spinner */
 .spinner{width:18px;height:18px;border:2px solid rgba(0,0,0,.2);border-top-color:#0E0E10;border-radius:50%;animation:spin .7s linear infinite;display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 .btn.loading .spinner{display:block}
 .btn.loading .btn-text{display:none}
-
-/* notif */
 .notif{position:fixed;bottom:24px;right:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;display:flex;align-items:center;gap:12px;font-size:14px;z-index:999;transform:translateY(120%);transition:transform .3s;max-width:320px}
 .notif.show{transform:translateY(0)}
 .notif .dot-notif{width:8px;height:8px;min-width:8px;border-radius:50%;background:var(--accent)}
-
-/* error outline on groups */
 .group-error{outline:1px solid var(--error);border-radius:var(--radius-sm)}
-
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--gray);border-radius:3px}
@@ -173,7 +131,6 @@ select option{background:#1a1a1c}
 
 <div class="shell">
 <div class="form-wrap">
-
   <div class="dots" id="dots"></div>
 
   <!-- STEP 0 — INTRO -->
@@ -184,21 +141,11 @@ select option{background:#1a1a1c}
         <span data-k="badge">Partnership Application</span>
       </div>
       <h1 data-k="intro_title">Let's find the best opportunity to grow together.</h1>
-      <p data-k="intro_sub">This form helps us evaluate your product and identify the strongest possible partnership format — the right GEOs, deal structure, and placement on our review sites. Takes about 5 minutes.</p>
+      <p data-k="intro_sub">This form helps us evaluate your product and identify the strongest possible partnership format — the right GEOs, deal structure, and placement on our review sites. Takes 7–10 minutes.</p>
       <div class="intro-stats">
-        <div class="stat-box">
-          <div class="val">~5</div>
-          <div class="lbl" data-k="stat1">minutes</div>
-        </div>
-        <div class="stat-box">
-          <div class="val">7</div>
-          <div class="lbl" data-k="stat2">sections</div>
-        </div>
-        <div class="stat-box">
-          <div class="val">100%</div>
-          <div class="lbl" data-k="stat3">confidential</div>
-          <div class="sub-lbl" data-k="stat3_sub">internal use only</div>
-        </div>
+        <div class="stat-box"><div class="val">7–10</div><div class="lbl" data-k="stat1">minutes</div></div>
+        <div class="stat-box"><div class="val">7</div><div class="lbl" data-k="stat2">sections</div></div>
+        <div class="stat-box"><div class="val">100%</div><div class="lbl" data-k="stat3">confidential</div><div class="sub-lbl" data-k="stat3_sub">internal use only</div></div>
       </div>
     </div>
     <div class="nav-row intro-nav">
@@ -211,7 +158,7 @@ select option{background:#1a1a1c}
 
   <!-- STEP 1 — AFFILIATE MANAGER -->
   <div class="step" id="step-1">
-    <div class="step-eyebrow" data-k="s1_eyebrow">Section 1 of 6</div>
+    <div class="step-eyebrow" data-k="s1_eyebrow">Section 1 of 7</div>
     <h2 class="step-title" data-k="s1_title">Affiliate Manager</h2>
     <p class="step-sub" data-k="s1_sub">Who is the point of contact on your side? We use these details for all communication.</p>
     <div class="field-group">
@@ -226,27 +173,21 @@ select option{background:#1a1a1c}
         <span class="field-error" data-k="err_email">Please enter a valid email</span>
       </div>
       <div class="field" id="f-am-tg">
-        <label><span data-k="am_tg">Telegram account</span><span class="req">*</span></label>
-        <input type="text" id="am_tg" placeholder="@yourtelegram">
+        <label><span data-k="am_tg">Telegram username</span><span class="req">*</span></label>
+        <input type="text" id="am_tg" placeholder="@yourusername">
         <span class="field-error" data-k="err_required">This field is required</span>
       </div>
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" data-goto="0">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-k="back">Back</span>
-      </button>
-      <span class="step-counter">1 / 6</span>
-      <button class="btn btn-primary" data-next="1">
-        <span class="btn-text" data-k="next">Continue</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn btn-ghost" data-goto="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-k="back">Back</span></button>
+      <span class="step-counter">1 / 7</span>
+      <button class="btn btn-primary" data-next="1"><span class="btn-text" data-k="next">Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 
-  <!-- STEP 2 — BRAND INFO -->
+  <!-- STEP 2 — BRAND DETAILS -->
   <div class="step" id="step-2">
-    <div class="step-eyebrow" data-k="s2_eyebrow">Section 2 of 6</div>
+    <div class="step-eyebrow" data-k="s2_eyebrow">Section 2 of 7</div>
     <h2 class="step-title" data-k="s2_title">Brand Details</h2>
     <p class="step-sub" data-k="s2_sub">Tell us about your product. The more precise, the better we can assess fit.</p>
     <div class="field-group">
@@ -273,43 +214,26 @@ select option{background:#1a1a1c}
       <input type="url" id="brand_book_link" placeholder="https://drive.google.com/..." style="margin-top:10px">
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" data-goto="1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-k="back">Back</span>
-      </button>
-      <span class="step-counter">2 / 6</span>
-      <button class="btn btn-primary" data-next="2">
-        <span class="btn-text" data-k="next">Continue</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn btn-ghost" data-goto="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-k="back">Back</span></button>
+      <span class="step-counter">2 / 7</span>
+      <button class="btn btn-primary" data-next="2"><span class="btn-text" data-k="next">Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 
-  <!-- STEP 3 — LICENSE & SOFTWARE -->
+  <!-- STEP 3 — LICENSE & PLATFORM -->
   <div class="step" id="step-3">
-    <div class="step-eyebrow" data-k="s3_eyebrow">Section 3 of 6</div>
+    <div class="step-eyebrow" data-k="s3_eyebrow">Section 3 of 7</div>
     <h2 class="step-title" data-k="s3_title">License &amp; Platform</h2>
     <p class="step-sub" data-k="s3_sub">Licensing and technology stack help us understand compliance and integration potential.</p>
 
     <div class="field">
       <label><span data-k="license_label">Active operating license</span><span class="req">*</span></label>
       <div class="choice-group" id="license-group">
-        <label class="choice-item" data-radio="license" data-val="Anjouan">
-          <input type="radio" name="license" value="Anjouan"> <span class="choice-label">Anjouan</span>
-        </label>
-        <label class="choice-item" data-radio="license" data-val="Curacao">
-          <input type="radio" name="license" value="Curacao"> <span class="choice-label">Curaçao eGaming</span>
-        </label>
-        <label class="choice-item" data-radio="license" data-val="Costa Rica">
-          <input type="radio" name="license" value="Costa Rica"> <span class="choice-label">Costa Rica</span>
-        </label>
-        <label class="choice-item" data-radio="license" data-val="Other">
-          <input type="radio" name="license" value="Other"> <span class="choice-label">Other</span>
-        </label>
-        <label class="choice-item" data-radio="license" data-val="N/A">
-          <input type="radio" name="license" value="N/A">
-          <span class="choice-label">N/A <small data-k="license_na_hint">No license — please explain below</small></span>
-        </label>
+        <label class="choice-item" data-radio="license" data-val="Anjouan"><input type="radio" name="license" value="Anjouan"><span class="choice-label">Anjouan</span></label>
+        <label class="choice-item" data-radio="license" data-val="Curacao"><input type="radio" name="license" value="Curacao"><span class="choice-label">Curaçao eGaming</span></label>
+        <label class="choice-item" data-radio="license" data-val="Costa Rica"><input type="radio" name="license" value="Costa Rica"><span class="choice-label">Costa Rica</span></label>
+        <label class="choice-item" data-radio="license" data-val="Other"><input type="radio" name="license" value="Other"><span class="choice-label">Other</span></label>
+        <label class="choice-item" data-radio="license" data-val="N/A"><input type="radio" name="license" value="N/A"><span class="choice-label">N/A <small data-k="license_na_hint">No license — please explain below</small></span></label>
       </div>
       <div class="conditional-field" id="license-explain">
         <input type="text" id="license_explain_txt" placeholder="Please explain the licensing situation…" data-ph="license_explain_ph">
@@ -319,32 +243,21 @@ select option{background:#1a1a1c}
     <div class="section-divider"></div>
 
     <div class="field">
-      <label><span data-k="software_label">Software provider</span><span class="req">*</span></label>
+      <label><span data-k="software_label">Whitelabel software</span><span class="req">*</span></label>
       <div class="choice-group" id="software-group">
-        <label class="choice-item" data-radio="software" data-val="SoftSwiss">
-          <input type="radio" name="software" value="SoftSwiss"> <span class="choice-label">SoftSwiss</span>
-        </label>
-        <label class="choice-item" data-radio="software" data-val="Referon">
-          <input type="radio" name="software" value="Referon"> <span class="choice-label">Referon</span>
-        </label>
-        <label class="choice-item" data-radio="software" data-val="Extendy">
-          <input type="radio" name="software" value="Extendy"> <span class="choice-label">Extendy</span>
-        </label>
-        <label class="choice-item" data-radio="software" data-val="GBL">
-          <input type="radio" name="software" value="GBL"> <span class="choice-label">GBL</span>
-        </label>
-        <label class="choice-item" data-radio="software" data-val="Truelabel">
-          <input type="radio" name="software" value="Truelabel"> <span class="choice-label">Truelabel</span>
-        </label>
-        <label class="choice-item" data-radio="software" data-val="Self-written">
-          <input type="radio" name="software" value="Self-written"> <span class="choice-label">Self-written / proprietary</span>
-        </label>
-        <label class="choice-item" data-radio="software" data-val="Other">
-          <input type="radio" name="software" value="Other"> <span class="choice-label">Other</span>
-        </label>
+        <label class="choice-item" data-radio="software" data-val="Soft2bet"><input type="radio" name="software" value="Soft2bet"><span class="choice-label">Soft2bet</span></label>
+        <label class="choice-item" data-radio="software" data-val="iGate"><input type="radio" name="software" value="iGate"><span class="choice-label">iGate</span></label>
+        <label class="choice-item" data-radio="software" data-val="Trulabel"><input type="radio" name="software" value="Trulabel"><span class="choice-label">Trulabel</span></label>
+        <label class="choice-item" data-radio="software" data-val="GBL"><input type="radio" name="software" value="GBL"><span class="choice-label">GBL</span></label>
+        <label class="choice-item" data-radio="software" data-val="Extendy"><input type="radio" name="software" value="Extendy"><span class="choice-label">Extendy</span></label>
+        <label class="choice-item" data-radio="software" data-val="SoftSwiss"><input type="radio" name="software" value="SoftSwiss"><span class="choice-label">SoftSwiss</span></label>
+        <label class="choice-item" data-radio="software" data-val="Upgaming"><input type="radio" name="software" value="Upgaming"><span class="choice-label">Upgaming</span></label>
+        <label class="choice-item" data-radio="software" data-val="BetConstruct"><input type="radio" name="software" value="BetConstruct"><span class="choice-label">BetConstruct</span></label>
+        <label class="choice-item" data-radio="software" data-val="Self-proprietary"><input type="radio" name="software" value="Self-proprietary"><span class="choice-label">Self-proprietary / self-written</span></label>
+        <label class="choice-item" data-radio="software" data-val="Other"><input type="radio" name="software" value="Other"><span class="choice-label">Other</span></label>
       </div>
       <div class="conditional-field" id="software-explain">
-        <input type="text" id="software_other_txt" placeholder="Specify software provider…" data-ph="software_other_ph">
+        <input type="text" id="software_other_txt" placeholder="Specify software…" data-ph="software_other_ph">
       </div>
     </div>
 
@@ -359,15 +272,9 @@ select option{background:#1a1a1c}
       <div class="field">
         <label data-k="api_label">API integration available?</label>
         <div class="choice-group" id="api-group" style="flex-direction:row;gap:8px;margin-top:2px">
-          <label class="choice-item" data-radio="api" data-val="Yes" style="flex:1">
-            <input type="radio" name="api" value="Yes"> <span class="choice-label" data-k="yes">Yes</span>
-          </label>
-          <label class="choice-item" data-radio="api" data-val="No" style="flex:1">
-            <input type="radio" name="api" value="No"> <span class="choice-label" data-k="no">No</span>
-          </label>
-          <label class="choice-item" data-radio="api" data-val="In progress" style="flex:1.5">
-            <input type="radio" name="api" value="In progress"> <span class="choice-label" data-k="in_progress">In progress</span>
-          </label>
+          <label class="choice-item" data-radio="api" data-val="Yes" style="flex:1"><input type="radio" name="api" value="Yes"><span class="choice-label" data-k="yes">Yes</span></label>
+          <label class="choice-item" data-radio="api" data-val="No" style="flex:1"><input type="radio" name="api" value="No"><span class="choice-label" data-k="no">No</span></label>
+          <label class="choice-item" data-radio="api" data-val="In progress" style="flex:1.5"><input type="radio" name="api" value="In progress"><span class="choice-label" data-k="in_progress">In progress</span></label>
         </div>
       </div>
     </div>
@@ -378,39 +285,45 @@ select option{background:#1a1a1c}
       <label><span data-k="fixed_fees_label">Do you work with fixed fees for listing on specific site blocks and/or top positions?</span></label>
       <p class="hint" data-k="fixed_fees_hint">e.g. featured placement, top-3 position on a review page for a calendar month</p>
       <div class="choice-group" id="fixed-fees-group" style="margin-top:8px">
-        <label class="choice-item" data-radio="fixed_fees" data-val="Yes">
-          <input type="radio" name="fixed_fees" value="Yes"> <span class="choice-label" data-k="ff_yes">Yes, we already work with fixed fees</span>
-        </label>
-        <label class="choice-item" data-radio="fixed_fees" data-val="Open to discuss">
-          <input type="radio" name="fixed_fees" value="Open to discuss"> <span class="choice-label" data-k="ff_open">Open to discuss</span>
-        </label>
-        <label class="choice-item" data-radio="fixed_fees" data-val="No">
-          <input type="radio" name="fixed_fees" value="No"> <span class="choice-label" data-k="ff_no">No, not at this stage</span>
-        </label>
+        <label class="choice-item" data-radio="fixed_fees" data-val="Yes"><input type="radio" name="fixed_fees" value="Yes"><span class="choice-label" data-k="ff_yes">Yes, we already work with fixed fees</span></label>
+        <label class="choice-item" data-radio="fixed_fees" data-val="Open to discuss"><input type="radio" name="fixed_fees" value="Open to discuss"><span class="choice-label" data-k="ff_open">Open to discuss</span></label>
+        <label class="choice-item" data-radio="fixed_fees" data-val="No"><input type="radio" name="fixed_fees" value="No"><span class="choice-label" data-k="ff_no">No, not at this stage</span></label>
       </div>
     </div>
 
     <div class="nav-row">
-      <button class="btn btn-ghost" data-goto="2">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-k="back">Back</span>
-      </button>
-      <span class="step-counter">3 / 6</span>
-      <button class="btn btn-primary" data-next="3">
-        <span class="btn-text" data-k="next">Continue</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn btn-ghost" data-goto="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-k="back">Back</span></button>
+      <span class="step-counter">3 / 7</span>
+      <button class="btn btn-primary" data-next="3"><span class="btn-text" data-k="next">Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 
-  <!-- STEP 4 — GEOs -->
+  <!-- STEP 4 — SOURCES & TARGET GEOs -->
   <div class="step" id="step-4">
-    <div class="step-eyebrow" data-k="s4_eyebrow">Section 4 of 6</div>
-    <h2 class="step-title" data-k="s4_title">Target GEOs</h2>
-    <p class="step-sub" data-k="s4_sub">Which markets does your brand focus on? Select all applicable tiers and specify the key GEOs.</p>
+    <div class="step-eyebrow" data-k="s4_eyebrow">Section 4 of 7</div>
+    <h2 class="step-title" data-k="s4_title">Sources &amp; Target GEOs</h2>
+    <p class="step-sub" data-k="s4_sub">Tell us about your traffic mix, target markets, and what deal terms you're looking for.</p>
 
     <div class="field">
-      <label><span data-k="tier_label">Best converting / focus tier</span><span class="req">*</span></label>
+      <label><span data-k="sources_label">Targeted traffic sources</span><span class="req">*</span></label>
+      <p class="hint" data-k="sources_hint">Select all that apply.</p>
+      <div class="check-grid" id="sources-group" style="margin-top:10px">
+        <label class="check-item" data-checkbox><input type="checkbox" value="SEO"><span data-k="src_seo">SEO</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Social (Meta, TikTok, LinkedIn)"><span data-k="src_social">Social (Meta, TikTok, LinkedIn)</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="ASO"><span data-k="src_aso">ASO</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="In-app"><span data-k="src_inapp">In-app</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="PPC"><span data-k="src_ppc">PPC</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Influence"><span data-k="src_influence">Influence</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Email"><span data-k="src_email">Email</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="UAC"><span data-k="src_uac">UAC</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Native"><span data-k="src_native">Native</span></label>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field">
+      <label><span data-k="tier_label">Best converting / focus Tier</span><span class="req">*</span></label>
       <div class="tier-group" id="tier-group">
         <span class="tier-pill" data-tier="Tier-1">Tier-1</span>
         <span class="tier-pill" data-tier="Tier-2">Tier-2</span>
@@ -421,66 +334,103 @@ select option{background:#1a1a1c}
 
     <div class="field" style="margin-top:16px" id="f-geo-list">
       <label><span data-k="geo_specify">Specify target GEOs</span><span class="req">*</span></label>
-      <input type="text" id="geo_list" placeholder="e.g. DE, AT, CH, CA, NZ…">
+      <input type="text" id="geo_list" placeholder="e.g. DE, AT, CH, PL, CZ…">
       <span class="field-error" data-k="err_required">This field is required</span>
     </div>
 
     <div class="section-divider"></div>
 
     <div class="field">
-      <label data-k="cr_label">Avg. conversion rate (reg → deposit) from SEO traffic</label>
-      <p class="hint" data-k="cr_hint">Select the range that best fits your performance. You can specify per-GEO below.</p>
-      <div class="choice-group" id="cr-group" style="margin-top:8px">
-        <label class="choice-item" data-radio="cr" data-val="&lt;5%">
-          <input type="radio" name="cr" value="<5%"> <span class="choice-label">&lt;5%</span>
-        </label>
-        <label class="choice-item" data-radio="cr" data-val="5–10%">
-          <input type="radio" name="cr" value="5–10%"> <span class="choice-label">5–10%</span>
-        </label>
-        <label class="choice-item" data-radio="cr" data-val="10–20%">
-          <input type="radio" name="cr" value="10–20%"> <span class="choice-label">10–20%</span>
-        </label>
-        <label class="choice-item" data-radio="cr" data-val="20–30%">
-          <input type="radio" name="cr" value="20–30%"> <span class="choice-label">20–30%</span>
-        </label>
-        <label class="choice-item" data-radio="cr" data-val="30%+">
-          <input type="radio" name="cr" value="30%+"> <span class="choice-label">30%+</span>
-        </label>
+      <label><span data-k="deal_structure_label">Preferred deal structure (SEO source)</span><span class="req">*</span></label>
+      <div class="choice-group" id="deal-structure-group" style="flex-direction:row;gap:8px;margin-top:4px">
+        <label class="choice-item" data-radio="deal_structure" data-val="CPA" style="flex:1"><input type="radio" name="deal_structure" value="CPA"><span class="choice-label">CPA</span></label>
+        <label class="choice-item" data-radio="deal_structure" data-val="RevShare" style="flex:1"><input type="radio" name="deal_structure" value="RevShare"><span class="choice-label">RevShare</span></label>
+        <label class="choice-item" data-radio="deal_structure" data-val="Hybrid" style="flex:1"><input type="radio" name="deal_structure" value="Hybrid"><span class="choice-label">Hybrid</span></label>
       </div>
-      <input type="text" id="cr_geo" placeholder="Optional: specify GEO this applies to" data-ph="cr_geo_ph" style="margin-top:10px">
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field-group two-col">
+      <div class="field">
+        <label data-k="cr_label">Avg. CR (reg → deposit) — SEO traffic</label>
+        <p class="hint" data-k="cr_hint">Select the closest range.</p>
+        <div class="choice-group" id="cr-seo-group" style="margin-top:8px">
+          <label class="choice-item" data-radio="cr_seo" data-val="&lt;5%"><input type="radio" name="cr_seo" value="<5%"><span class="choice-label">&lt;5%</span></label>
+          <label class="choice-item" data-radio="cr_seo" data-val="5–10%"><input type="radio" name="cr_seo" value="5–10%"><span class="choice-label">5–10%</span></label>
+          <label class="choice-item" data-radio="cr_seo" data-val="10–20%"><input type="radio" name="cr_seo" value="10–20%"><span class="choice-label">10–20%</span></label>
+          <label class="choice-item" data-radio="cr_seo" data-val="20–30%"><input type="radio" name="cr_seo" value="20–30%"><span class="choice-label">20–30%</span></label>
+          <label class="choice-item" data-radio="cr_seo" data-val="30%+"><input type="radio" name="cr_seo" value="30%+"><span class="choice-label">30%+</span></label>
+        </div>
+        <input type="text" id="cr_geo" placeholder="Optional: specify GEO" data-ph="cr_geo_ph" style="margin-top:10px">
+      </div>
+      <div class="field">
+        <label data-k="cr_social_label">Avg. CR (reg → deposit) — Social &amp; other sources</label>
+        <p class="hint" data-k="cr_social_hint">Optional.</p>
+        <div class="choice-group" id="cr-social-group" style="margin-top:8px">
+          <label class="choice-item" data-radio="cr_social" data-val="&lt;5%"><input type="radio" name="cr_social" value="<5%"><span class="choice-label">&lt;5%</span></label>
+          <label class="choice-item" data-radio="cr_social" data-val="5–10%"><input type="radio" name="cr_social" value="5–10%"><span class="choice-label">5–10%</span></label>
+          <label class="choice-item" data-radio="cr_social" data-val="10–20%"><input type="radio" name="cr_social" value="10–20%"><span class="choice-label">10–20%</span></label>
+          <label class="choice-item" data-radio="cr_social" data-val="20–30%"><input type="radio" name="cr_social" value="20–30%"><span class="choice-label">20–30%</span></label>
+          <label class="choice-item" data-radio="cr_social" data-val="30%+"><input type="radio" name="cr_social" value="30%+"><span class="choice-label">30%+</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field" id="f-best-deal">
+      <label><span data-k="best_deal_label">Best deal you would propose for your target GEOs</span><span class="req">*</span></label>
+      <p class="hint" data-k="best_deal_hint">Provide a specific example, e.g. CZ 160 EUR + 40% RevShare</p>
+      <textarea id="best_deal" rows="3" placeholder="e.g. CZ 160 EUR + 40% RevShare, PL 120 EUR CPA…" data-ph="best_deal_ph"></textarea>
+      <span class="field-error" data-k="err_required">This field is required</span>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field">
+      <label><span data-k="seo_approaches_label">SEO approaches you accept</span><span class="req">*</span></label>
+      <p class="hint" data-k="seo_approaches_hint">Select all that apply.</p>
+      <div class="choice-group" id="seo-approaches-group" style="margin-top:8px">
+        <label class="choice-item" data-checkbox><input type="checkbox" value="Parasite SEO"><span class="choice-label" data-k="seo_a1">Parasite SEO (Reddit, TrustPilot, etc.)</span></label>
+        <label class="choice-item" data-checkbox><input type="checkbox" value="Classic / drop-domain / EMD / slot review sites"><span class="choice-label" data-k="seo_a2">Classic review sites / drop-domain sites / EMD sites / slot reviews</span></label>
+        <label class="choice-item" data-checkbox><input type="checkbox" value="Cross-brand"><span class="choice-label" data-k="seo_a3">Cross-brand — redirecting users between products</span></label>
+        <label class="choice-item" data-checkbox><input type="checkbox" value="Mono-brand"><span class="choice-label" data-k="seo_a4">Mono-brand — site dedicated entirely to your casino <small data-k="seo_a4_hint">Brand keywords may be used</small></span></label>
+      </div>
+      <input type="text" id="seo_approaches_detail" placeholder="Tell us more about desired approaches…" data-ph="seo_approaches_detail_ph" style="margin-top:10px">
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field">
+      <label><span data-k="ftd_label">Ideal FTD volume to accept from a new partner</span><span class="req">*</span></label>
+      <div class="choice-group" id="ftd-group" style="margin-top:4px">
+        <label class="choice-item" data-radio="ftd_amount" data-val="10–20 FTD"><input type="radio" name="ftd_amount" value="10–20 FTD"><span class="choice-label" data-k="ftd1">10–20 FTD</span></label>
+        <label class="choice-item" data-radio="ftd_amount" data-val="21–50 FTD"><input type="radio" name="ftd_amount" value="21–50 FTD"><span class="choice-label" data-k="ftd2">21–50 FTD</span></label>
+        <label class="choice-item" data-radio="ftd_amount" data-val="50 FTD+"><input type="radio" name="ftd_amount" value="50 FTD+"><span class="choice-label" data-k="ftd3">50 FTD+</span></label>
+        <label class="choice-item" data-radio="ftd_amount" data-val="No upper limit"><input type="radio" name="ftd_amount" value="No upper limit"><span class="choice-label" data-k="ftd4">No upper limit</span></label>
+      </div>
     </div>
 
     <div class="nav-row">
-      <button class="btn btn-ghost" data-goto="3">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-k="back">Back</span>
-      </button>
-      <span class="step-counter">4 / 6</span>
-      <button class="btn btn-primary" data-next="4">
-        <span class="btn-text" data-k="next">Continue</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn btn-ghost" data-goto="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-k="back">Back</span></button>
+      <span class="step-counter">4 / 7</span>
+      <button class="btn btn-primary" data-next="4"><span class="btn-text" data-k="next">Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 
   <!-- STEP 5 — OPERATION & RETENTION -->
   <div class="step" id="step-5">
-    <div class="step-eyebrow" data-k="s5_eyebrow">Section 5 of 6</div>
+    <div class="step-eyebrow" data-k="s5_eyebrow">Section 5 of 7</div>
     <h2 class="step-title" data-k="s5_title">Operation &amp; Retention</h2>
     <p class="step-sub" data-k="s5_sub">Understanding the maturity and CRM capabilities of the operation helps us estimate player LTV.</p>
 
     <div class="field">
       <label><span data-k="exp_label">How long has the operation existed?</span><span class="req">*</span></label>
       <div class="choice-group" id="exp-group">
-        <label class="choice-item" data-radio="experience" data-val="1–2 years">
-          <input type="radio" name="experience" value="1–2 years"> <span class="choice-label" data-k="exp1">1–2 years</span>
-        </label>
-        <label class="choice-item" data-radio="experience" data-val="3–5 years">
-          <input type="radio" name="experience" value="3–5 years"> <span class="choice-label" data-k="exp2">3–5 years</span>
-        </label>
-        <label class="choice-item" data-radio="experience" data-val="5+ years">
-          <input type="radio" name="experience" value="5+ years"> <span class="choice-label" data-k="exp3">5+ years</span>
-        </label>
+        <label class="choice-item" data-radio="experience" data-val="1–2 years"><input type="radio" name="experience" value="1–2 years"><span class="choice-label" data-k="exp1">1–2 years</span></label>
+        <label class="choice-item" data-radio="experience" data-val="3–5 years"><input type="radio" name="experience" value="3–5 years"><span class="choice-label" data-k="exp2">3–5 years</span></label>
+        <label class="choice-item" data-radio="experience" data-val="5+ years"><input type="radio" name="experience" value="5+ years"><span class="choice-label" data-k="exp3">5+ years</span></label>
       </div>
     </div>
 
@@ -490,62 +440,98 @@ select option{background:#1a1a1c}
       <label><span data-k="retention_label">Retention strategies implemented</span><span class="req">*</span></label>
       <p class="hint" data-k="retention_hint">Select all that apply.</p>
       <div class="check-grid" id="retention-group" style="margin-top:10px">
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="Behavioural CRM tracking"> <span data-k="ret1">Behavioural CRM tracking</span>
-        </label>
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="Email retention campaigns"> <span data-k="ret2">Email retention campaigns</span>
-        </label>
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="Live chat support"> <span data-k="ret3">Live chat support</span>
-        </label>
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="Local-language phone support (VIP)"> <span data-k="ret4">Local-language phone support (VIP)</span>
-        </label>
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="SMS / push notifications"> <span data-k="ret5">SMS / Push notifications</span>
-        </label>
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="Loyalty / VIP programme"> <span data-k="ret6">Loyalty / VIP programme</span>
-        </label>
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="Reactivation bonuses"> <span data-k="ret7">Reactivation bonuses</span>
-        </label>
-        <label class="check-item" data-checkbox>
-          <input type="checkbox" value="Personalised bonus offers"> <span data-k="ret8">Personalised bonus offers</span>
-        </label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Behavioural CRM tracking"><span data-k="ret1">Behavioural CRM tracking</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Email retention campaigns"><span data-k="ret2">Email retention campaigns</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Live chat support"><span data-k="ret3">Live chat support</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Local-language phone support (VIP)"><span data-k="ret4">Local-language phone support (VIP)</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="SMS / push notifications"><span data-k="ret5">SMS / Push notifications</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Loyalty / VIP programme"><span data-k="ret6">Loyalty / VIP programme</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Reactivation bonuses"><span data-k="ret7">Reactivation bonuses</span></label>
+        <label class="check-item" data-checkbox><input type="checkbox" value="Personalised bonus offers"><span data-k="ret8">Personalised bonus offers</span></label>
       </div>
       <input type="text" id="retention_other" placeholder="Other retention methods…" data-ph="ret_other_ph" style="margin-top:10px">
     </div>
 
+    <div class="section-divider"></div>
+
+    <div class="field">
+      <label data-k="payback_label">Target payback period on product</label>
+      <div class="choice-group" id="payback-group" style="flex-direction:row;flex-wrap:wrap;gap:8px;margin-top:4px">
+        <label class="choice-item" data-radio="payback_period" data-val="3 months" style="flex:1;min-width:120px"><input type="radio" name="payback_period" value="3 months"><span class="choice-label" data-k="pb1">3 months</span></label>
+        <label class="choice-item" data-radio="payback_period" data-val="6 months" style="flex:1;min-width:120px"><input type="radio" name="payback_period" value="6 months"><span class="choice-label" data-k="pb2">6 months</span></label>
+        <label class="choice-item" data-radio="payback_period" data-val="9 months" style="flex:1;min-width:120px"><input type="radio" name="payback_period" value="9 months"><span class="choice-label" data-k="pb3">9 months</span></label>
+        <label class="choice-item" data-radio="payback_period" data-val="1 year+" style="flex:1;min-width:120px"><input type="radio" name="payback_period" value="1 year+"><span class="choice-label" data-k="pb4">1 year+</span></label>
+      </div>
+    </div>
+
     <div class="nav-row">
-      <button class="btn btn-ghost" data-goto="4">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-k="back">Back</span>
-      </button>
-      <span class="step-counter">5 / 6</span>
-      <button class="btn btn-primary" data-next="5">
-        <span class="btn-text" data-k="next">Continue</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button class="btn btn-ghost" data-goto="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-k="back">Back</span></button>
+      <span class="step-counter">5 / 7</span>
+      <button class="btn btn-primary" data-next="5"><span class="btn-text" data-k="next">Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 
-  <!-- STEP 6 — COMMENT -->
+  <!-- STEP 6 — PAYMENTS -->
   <div class="step" id="step-6">
-    <div class="step-eyebrow" data-k="s6_eyebrow">Section 6 of 6</div>
-    <h2 class="step-title" data-k="s6_title">Anything else?</h2>
-    <p class="step-sub" data-k="s6_sub">Optional — share any additional context, deal expectations, or questions you have for us.</p>
+    <div class="step-eyebrow" data-k="s6_eyebrow">Section 6 of 7</div>
+    <h2 class="step-title" data-k="s6_title">Payments</h2>
+    <p class="step-sub" data-k="s6_sub">Help us understand how payments are structured on your side.</p>
+
+    <div class="field">
+      <label><span data-k="payment_terms_label">Standard payment terms</span><span class="req">*</span></label>
+      <div class="choice-group" id="payment-terms-group" style="flex-direction:row;flex-wrap:wrap;gap:8px;margin-top:4px">
+        <label class="choice-item" data-radio="payment_terms" data-val="Net7" style="flex:1;min-width:100px"><input type="radio" name="payment_terms" value="Net7"><span class="choice-label">Net7</span></label>
+        <label class="choice-item" data-radio="payment_terms" data-val="Net14" style="flex:1;min-width:100px"><input type="radio" name="payment_terms" value="Net14"><span class="choice-label">Net14</span></label>
+        <label class="choice-item" data-radio="payment_terms" data-val="Net30" style="flex:1;min-width:100px"><input type="radio" name="payment_terms" value="Net30"><span class="choice-label">Net30</span></label>
+        <label class="choice-item" data-radio="payment_terms" data-val="Net45+" style="flex:1;min-width:100px"><input type="radio" name="payment_terms" value="Net45+"><span class="choice-label">Net45+</span></label>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field">
+      <label><span data-k="payment_method_label">Preferred payment method</span><span class="req">*</span></label>
+      <div class="choice-group" id="payment-method-group" style="margin-top:4px">
+        <label class="choice-item" data-radio="payment_method" data-val="Crypto (USDT / BTC)"><input type="radio" name="payment_method" value="Crypto (USDT / BTC)"><span class="choice-label" data-k="pm_crypto">Crypto (USDT / BTC)</span></label>
+        <label class="choice-item" data-radio="payment_method" data-val="Wire transfer"><input type="radio" name="payment_method" value="Wire transfer"><span class="choice-label" data-k="pm_wire">Wire transfer</span></label>
+        <label class="choice-item" data-radio="payment_method" data-val="Bank transfer (SEPA)"><input type="radio" name="payment_method" value="Bank transfer (SEPA)"><span class="choice-label" data-k="pm_bank">Bank transfer (SEPA)</span></label>
+        <label class="choice-item" data-radio="payment_method" data-val="Other"><input type="radio" name="payment_method" value="Other"><span class="choice-label" data-k="pm_other">Other — specify</span></label>
+      </div>
+      <div class="conditional-field" id="payment-method-explain">
+        <input type="text" id="payment_method_other_txt" placeholder="Specify payment method…" data-ph="payment_method_other_ph">
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field">
+      <label data-k="io_label">Do you require an Insertion Order (IO) to be signed?</label>
+      <div class="choice-group" id="io-group" style="flex-direction:row;gap:8px;margin-top:4px">
+        <label class="choice-item" data-radio="io_required" data-val="Yes" style="flex:1"><input type="radio" name="io_required" value="Yes"><span class="choice-label" data-k="yes">Yes</span></label>
+        <label class="choice-item" data-radio="io_required" data-val="No" style="flex:1"><input type="radio" name="io_required" value="No"><span class="choice-label" data-k="no">No</span></label>
+        <label class="choice-item" data-radio="io_required" data-val="Per request" style="flex:1.5"><input type="radio" name="io_required" value="Per request"><span class="choice-label" data-k="io_per_request">Per request</span></label>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost" data-goto="5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-k="back">Back</span></button>
+      <span class="step-counter">6 / 7</span>
+      <button class="btn btn-primary" data-next="6"><span class="btn-text" data-k="next">Continue</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- STEP 7 — ANYTHING ELSE -->
+  <div class="step" id="step-7">
+    <div class="step-eyebrow" data-k="s7_eyebrow">Section 7 of 7</div>
+    <h2 class="step-title" data-k="s7_title">Anything else?</h2>
+    <p class="step-sub" data-k="s7_sub">Optional — share any additional context, deal expectations, or questions you have for us.</p>
     <div class="field">
       <label data-k="comment_label">Comments</label>
-      <textarea id="comment" rows="5" placeholder="e.g. preferred deal types, specific GEO targets, expected traffic volumes, questions…" data-ph="comment_ph"></textarea>
+      <textarea id="comment" rows="5" placeholder="e.g. preferred deal types, specific GEO targets, questions…" data-ph="comment_ph"></textarea>
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" data-goto="5">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-k="back">Back</span>
-      </button>
-      <span class="step-counter">6 / 6</span>
+      <button class="btn btn-ghost" data-goto="6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-k="back">Back</span></button>
+      <span class="step-counter">7 / 7</span>
       <button class="btn btn-primary btn-lg" id="submit-btn">
         <span class="btn-text" data-k="submit">Submit application</span>
         <div class="spinner"></div>
@@ -556,66 +542,68 @@ select option{background:#1a1a1c}
   <!-- SUCCESS -->
   <div class="step" id="step-success">
     <div class="success-wrap">
-      <div class="success-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
+      <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h2 data-k="success_title">Application received!</h2>
       <p data-k="success_sub">Thank you for applying. Our team will review your brand and reach out within 1–2 business days to discuss next steps.</p>
     </div>
   </div>
 
-</div><!-- /form-wrap -->
-</div><!-- /shell -->
-
-<div class="notif" id="notif">
-  <div class="dot-notif"></div>
-  <span id="notif-text"></span>
+</div>
 </div>
 
+<div class="notif" id="notif"><div class="dot-notif"></div><span id="notif-text"></span></div>
+
 <script>
-/* =============================================================
-   CONFIG — set before sharing
-   ============================================================= */
-// Only this URL is needed in the HTML — token and Telegram logic live in Apps Script (server-side, not visible to anyone)
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwQf3JmwR8iE71V4q7m_vjW72XXgj4QoFiqcf-JCjaivw4z1XKTSFh_Kor1HsDWqYciBw/exec';
 
-/* =============================================================
-   TRANSLATIONS
-   ============================================================= */
 const T = {
   en:{
     badge:'Partnership Application',
     intro_title:"Let's find the best opportunity to grow together.",
-    intro_sub:'This form helps us evaluate your product and identify the strongest possible partnership format — the right GEOs, deal structure, and placement on our review sites. Takes about 5 minutes.',
+    intro_sub:'This form helps us evaluate your product and identify the strongest possible partnership format — the right GEOs, deal structure, and placement on our review sites. Takes 7–10 minutes.',
     stat1:'minutes', stat2:'sections', stat3:'confidential', stat3_sub:'internal use only',
     start:'Start application',
-    s1_eyebrow:'Section 1 of 6', s1_title:'Affiliate Manager',
+    s1_eyebrow:'Section 1 of 7', s1_title:'Affiliate Manager',
     s1_sub:'Who is the point of contact on your side? We use these details for all communication.',
     am_name:'Full name', am_email:'Email address', am_tg:'Telegram username',
-    s2_eyebrow:'Section 2 of 6', s2_title:'Brand Details',
+    s2_eyebrow:'Section 2 of 7', s2_title:'Brand Details',
     s2_sub:'Tell us about your product. The more precise, the better we can assess fit.',
     brand_name:'Brand name', brand_url:'Brand URL', brand_date:'Brand launch date',
     brand_book:'Brand Book / Product Document',
     brand_book_hint:'Please share a link to your brand book <strong>(Google Drive, Dropbox, WeTransfer etc.)</strong>. The document should include: accepted currencies, deposit &amp; withdrawal methods, game portfolio, bonus offer breakdown, accepted/restricted GEOs. Formats: <strong>XLSX, CSV, PDF</strong>.',
-    s3_eyebrow:'Section 3 of 6', s3_title:'License &amp; Platform',
+    s3_eyebrow:'Section 3 of 7', s3_title:'License &amp; Platform',
     s3_sub:'Licensing and technology stack help us understand compliance and integration potential.',
     license_label:'Active operating license', license_na_hint:'No license — please explain below',
-    software_label:'Software provider', aff_url:'Affiliate platform URL',
+    software_label:'Whitelabel software', aff_url:'Affiliate platform URL',
     api_label:'API integration available?', yes:'Yes', no:'No', in_progress:'In progress',
     license_explain_ph:'Please explain the licensing situation…',
-    software_other_ph:'Specify software provider…',
-    s4_eyebrow:'Section 4 of 6', s4_title:'Target GEOs',
-    s4_sub:'Which markets does your brand focus on? Select all applicable tiers and specify the key GEOs.',
-    tier_label:'Best converting / focus tier', geo_specify:'Specify target GEOs',
-    cr_label:'Avg. conversion rate (reg → deposit) from SEO traffic',
-    cr_hint:'Select the range that best fits your performance. You can specify per-GEO below.',
-    cr_geo_ph:'Optional: specify GEO this applies to',
+    software_other_ph:'Specify software…',
     fixed_fees_label:'Do you work with fixed fees for listing on specific site blocks and/or top positions?',
     fixed_fees_hint:'e.g. featured placement, top-3 position on a review page for a calendar month',
-    ff_yes:'Yes, we already work with fixed fees',
-    ff_open:'Open to discuss',
-    ff_no:'No, not at this stage',
-    s5_eyebrow:'Section 5 of 6', s5_title:'Operation &amp; Retention',
+    ff_yes:'Yes, we already work with fixed fees', ff_open:'Open to discuss', ff_no:'No, not at this stage',
+    s4_eyebrow:'Section 4 of 7', s4_title:'Sources &amp; Target GEOs',
+    s4_sub:'Tell us about your traffic mix, target markets, and what deal terms you\'re looking for.',
+    sources_label:'Targeted traffic sources', sources_hint:'Select all that apply.',
+    src_seo:'SEO', src_social:'Social (Meta, TikTok, LinkedIn)', src_aso:'ASO', src_inapp:'In-app',
+    src_ppc:'PPC', src_influence:'Influence', src_email:'Email', src_uac:'UAC', src_native:'Native',
+    tier_label:'Best converting / focus Tier', geo_specify:'Specify target GEOs',
+    deal_structure_label:'Preferred deal structure (SEO source)',
+    cr_label:'Avg. CR (reg → deposit) — SEO traffic', cr_hint:'Select the closest range.',
+    cr_geo_ph:'Optional: specify GEO',
+    cr_social_label:'Avg. CR (reg → deposit) — Social &amp; other sources', cr_social_hint:'Optional.',
+    best_deal_label:'Best deal you would propose for your target GEOs',
+    best_deal_hint:'Provide a specific example, e.g. CZ 160 EUR + 40% RevShare',
+    best_deal_ph:'e.g. CZ 160 EUR + 40% RevShare, PL 120 EUR CPA…',
+    seo_approaches_label:'SEO approaches you accept', seo_approaches_hint:'Select all that apply.',
+    seo_a1:'Parasite SEO (Reddit, TrustPilot, etc.)',
+    seo_a2:'Classic review sites / drop-domain sites / EMD sites / slot reviews',
+    seo_a3:'Cross-brand — redirecting users between products',
+    seo_a4:'Mono-brand — site dedicated entirely to your casino',
+    seo_a4_hint:'Brand keywords may be used',
+    seo_approaches_detail_ph:'Tell us more about desired approaches…',
+    ftd_label:'Ideal FTD volume to accept from a new partner',
+    ftd1:'10–20 FTD', ftd2:'21–50 FTD', ftd3:'50 FTD+', ftd4:'No upper limit',
+    s5_eyebrow:'Section 5 of 7', s5_title:'Operation &amp; Retention',
     s5_sub:'Understanding the maturity and CRM capabilities of the operation helps us estimate player LTV.',
     exp_label:'How long has the operation existed?',
     exp1:'1–2 years', exp2:'3–5 years', exp3:'5+ years',
@@ -624,8 +612,19 @@ const T = {
     ret4:'Local-language phone support (VIP)', ret5:'SMS / Push notifications',
     ret6:'Loyalty / VIP programme', ret7:'Reactivation bonuses', ret8:'Personalised bonus offers',
     ret_other_ph:'Other retention methods…',
-    s6_eyebrow:'Section 6 of 6', s6_title:'Anything else?',
-    s6_sub:'Optional — share any additional context, deal expectations, or questions you have for us.',
+    payback_label:'Target payback period on product',
+    pb1:'3 months', pb2:'6 months', pb3:'9 months', pb4:'1 year+',
+    s6_eyebrow:'Section 6 of 7', s6_title:'Payments',
+    s6_sub:'Help us understand how payments are structured on your side.',
+    payment_terms_label:'Standard payment terms',
+    payment_method_label:'Preferred payment method',
+    pm_crypto:'Crypto (USDT / BTC)', pm_wire:'Wire transfer',
+    pm_bank:'Bank transfer (SEPA)', pm_other:'Other — specify',
+    payment_method_other_ph:'Specify payment method…',
+    io_label:'Do you require an Insertion Order (IO) to be signed?',
+    io_per_request:'Per request',
+    s7_eyebrow:'Section 7 of 7', s7_title:'Anything else?',
+    s7_sub:'Optional — share any additional context, deal expectations, or questions you have for us.',
     comment_label:'Comments',
     comment_ph:'e.g. preferred deal types, specific GEO targets, expected traffic volumes, questions…',
     submit:'Submit application', back:'Back', next:'Continue',
@@ -637,36 +636,50 @@ const T = {
   ru:{
     badge:'Заявка на партнёрство',
     intro_title:'Найдём лучшую возможность для совместного роста.',
-    intro_sub:'Эта форма помогает нам оценить ваш продукт и определить оптимальный формат партнёрства — нужные GEO, структуру сделки и размещение на наших обзорных сайтах. Занимает около 5 минут.',
+    intro_sub:'Эта форма помогает нам оценить ваш продукт и определить оптимальный формат партнёрства — нужные GEO, структуру сделки и размещение на наших обзорных сайтах. Занимает 7–10 минут.',
     stat1:'минут', stat2:'разделов', stat3:'конфиденциально', stat3_sub:'только для внутреннего использования',
     start:'Начать заявку',
-    s1_eyebrow:'Раздел 1 из 6', s1_title:'Affiliate Manager',
-    s1_sub:'Кто является контактным лицом с вашей стороны?',
-    am_name:'Полное имя', am_email:'Электронная почта', am_tg:'Telegram-аккаунт',
-    s2_eyebrow:'Раздел 2 из 6', s2_title:'Информация о бренде',
+    s1_eyebrow:'Раздел 1 из 7', s1_title:'Affiliate Manager',
+    s1_sub:'Кто является контактным лицом с вашей стороны? Эти данные используются для коммуникации.',
+    am_name:'Полное имя', am_email:'Электронная почта', am_tg:'Telegram username',
+    s2_eyebrow:'Раздел 2 из 7', s2_title:'Информация о бренде',
     s2_sub:'Расскажите о вашем продукте. Чем точнее — тем лучше мы оценим совместимость.',
     brand_name:'Название бренда', brand_url:'URL бренда', brand_date:'Дата запуска бренда',
     brand_book:'Брендбук / Документ о продукте',
-    brand_book_hint:'Пожалуйста, поделитесь ссылкой на ваш брендбук <strong>(Google Drive, Dropbox, WeTransfer и т.д.)</strong>. Документ должен включать: принимаемые валюты, методы депозита и вывода, игровой портфель, описание бонусов, разрешённые и запрещённые GEO. Форматы: <strong>XLSX, CSV, PDF</strong>.',
-    s3_eyebrow:'Раздел 3 из 6', s3_title:'Лицензия и платформа',
+    brand_book_hint:'Поделитесь ссылкой на ваш брендбук <strong>(Google Drive, Dropbox, WeTransfer и т.д.)</strong>. Документ должен включать: валюты, методы депозита и вывода, игровой портфель, описание бонусов, разрешённые и запрещённые GEO. Форматы: <strong>XLSX, CSV, PDF</strong>.',
+    s3_eyebrow:'Раздел 3 из 7', s3_title:'Лицензия и платформа',
     s3_sub:'Лицензирование и технологический стек помогают оценить соответствие требованиям.',
     license_label:'Действующая лицензия', license_na_hint:'Нет лицензии — поясните ниже',
-    software_label:'Провайдер платформы', aff_url:'URL аффилиатной платформы',
+    software_label:'Whitelabel-платформа', aff_url:'URL аффилиатной платформы',
     api_label:'Есть ли API для выгрузки данных?', yes:'Да', no:'Нет', in_progress:'В разработке',
     license_explain_ph:'Поясните ситуацию с лицензированием…',
-    software_other_ph:'Укажите провайдера…',
-    s4_eyebrow:'Раздел 4 из 6', s4_title:'Целевые GEO',
-    s4_sub:'На каких рынках сфокусирован ваш бренд? Выберите уровни и укажите ключевые GEO.',
-    tier_label:'Лучшая конверсия / целевой Tier', geo_specify:'Укажите целевые GEO',
-    cr_label:'Средняя конверсия (рег → депозит) с SEO-трафика',
-    cr_hint:'Выберите диапазон, наиболее соответствующий вашим показателям.',
-    cr_geo_ph:'Необязательно: укажите GEO',
+    software_other_ph:'Укажите платформу…',
     fixed_fees_label:'Работаете ли вы с фиксированными взносами за размещение в определённых блоках сайта и/или топовых позициях?',
     fixed_fees_hint:'Например: featured-позиция, топ-3 на странице обзора в течение календарного месяца',
-    ff_yes:'Да, уже работаем с фиксированными взносами',
-    ff_open:'Готовы обсудить',
-    ff_no:'Нет, пока не рассматриваем',
-    s5_eyebrow:'Раздел 5 из 6', s5_title:'Операция и удержание',
+    ff_yes:'Да, уже работаем с фиксированными взносами', ff_open:'Готовы обсудить', ff_no:'Нет, пока не рассматриваем',
+    s4_eyebrow:'Раздел 4 из 7', s4_title:'Источники и целевые GEO',
+    s4_sub:'Расскажите о структуре трафика, целевых рынках и условиях сделки, которые вам подходят.',
+    sources_label:'Целевые источники трафика', sources_hint:'Выберите все подходящие варианты.',
+    src_seo:'SEO', src_social:'Social (Meta, TikTok, LinkedIn)', src_aso:'ASO', src_inapp:'In-app',
+    src_ppc:'PPC', src_influence:'Influence', src_email:'Email', src_uac:'UAC', src_native:'Native',
+    tier_label:'Лучшая конверсия / целевой Tier', geo_specify:'Укажите целевые GEO',
+    deal_structure_label:'Предпочтительная структура сделки (SEO-трафик)',
+    cr_label:'Средняя конверсия (рег → депозит) — SEO-трафик', cr_hint:'Выберите ближайший диапазон.',
+    cr_geo_ph:'Необязательно: укажите GEO',
+    cr_social_label:'Средняя конверсия (рег → депозит) — Social и другие источники', cr_social_hint:'Необязательно.',
+    best_deal_label:'Лучшие условия сделки для ваших целевых GEO',
+    best_deal_hint:'Укажите конкретный пример, например: CZ 160 EUR + 40% RevShare',
+    best_deal_ph:'например: CZ 160 EUR + 40% RevShare, PL 120 EUR CPA…',
+    seo_approaches_label:'Принимаемые SEO-подходы', seo_approaches_hint:'Выберите все подходящие варианты.',
+    seo_a1:'Parasite SEO (Reddit, TrustPilot и др.)',
+    seo_a2:'Классические обзорные / дроп-доменные / EMD / слот-обзорные сайты',
+    seo_a3:'Кросс-бренд — перенаправление пользователей между продуктами',
+    seo_a4:'Моно-бренд — сайт полностью посвящён вашему казино',
+    seo_a4_hint:'Могут использоваться брендовые ключевые слова',
+    seo_approaches_detail_ph:'Расскажите подробнее о желаемых подходах…',
+    ftd_label:'Идеальный объём FTD для принятия от нового партнёра',
+    ftd1:'10–20 FTD', ftd2:'21–50 FTD', ftd3:'50 FTD+', ftd4:'Без верхнего предела',
+    s5_eyebrow:'Раздел 5 из 7', s5_title:'Операция и удержание',
     s5_sub:'Понимание зрелости и CRM-возможностей помогает оценить LTV игроков.',
     exp_label:'Как давно существует операция?',
     exp1:'1–2 года', exp2:'3–5 лет', exp3:'5+ лет',
@@ -675,8 +688,19 @@ const T = {
     ret4:'Телефонная поддержка на местном языке (VIP)', ret5:'SMS / Push-уведомления',
     ret6:'Программа лояльности / VIP', ret7:'Бонусы за реактивацию', ret8:'Персонализированные бонусы',
     ret_other_ph:'Другие методы удержания…',
-    s6_eyebrow:'Раздел 6 из 6', s6_title:'Что-то ещё?',
-    s6_sub:'Необязательно — поделитесь дополнительным контекстом, ожиданиями или вопросами.',
+    payback_label:'Целевой срок окупаемости продукта',
+    pb1:'3 месяца', pb2:'6 месяцев', pb3:'9 месяцев', pb4:'1 год+',
+    s6_eyebrow:'Раздел 6 из 7', s6_title:'Платежи',
+    s6_sub:'Помогите нам понять, как организованы платежи с вашей стороны.',
+    payment_terms_label:'Стандартные условия оплаты',
+    payment_method_label:'Предпочтительный способ оплаты',
+    pm_crypto:'Крипто (USDT / BTC)', pm_wire:'Банковский перевод (Wire)',
+    pm_bank:'Банковский перевод (SEPA)', pm_other:'Другое — укажите',
+    payment_method_other_ph:'Укажите способ оплаты…',
+    io_label:'Требуется ли подписание Insertion Order (IO)?',
+    io_per_request:'По запросу',
+    s7_eyebrow:'Раздел 7 из 7', s7_title:'Что-то ещё?',
+    s7_sub:'Необязательно — поделитесь дополнительным контекстом, ожиданиями или вопросами.',
     comment_label:'Комментарии',
     comment_ph:'Например: предпочтительные типы сделок, конкретные GEO, ожидаемые объёмы трафика…',
     submit:'Отправить заявку', back:'Назад', next:'Продолжить',
@@ -688,36 +712,50 @@ const T = {
   ua:{
     badge:'Заявка на партнерство',
     intro_title:'Знайдемо найкращу можливість для спільного зростання.',
-    intro_sub:'Ця форма допомагає нам оцінити ваш продукт та визначити оптимальний формат партнерства — правильні GEO, структуру угоди та розміщення на наших оглядових сайтах. Займає близько 5 хвилин.',
+    intro_sub:'Ця форма допомагає нам оцінити ваш продукт та визначити оптимальний формат партнерства — правильні GEO, структуру угоди та розміщення на наших оглядових сайтах. Займає 7–10 хвилин.',
     stat1:'хвилин', stat2:'розділів', stat3:'конфіденційно', stat3_sub:'тільки для внутрішнього використання',
     start:'Почати заявку',
-    s1_eyebrow:'Розділ 1 з 6', s1_title:'Affiliate Manager',
-    s1_sub:'Хто є контактною особою з вашого боку?',
-    am_name:"Повне ім'я", am_email:'Електронна пошта', am_tg:'Telegram-акаунт',
-    s2_eyebrow:'Розділ 2 з 6', s2_title:'Інформація про бренд',
+    s1_eyebrow:'Розділ 1 з 7', s1_title:'Affiliate Manager',
+    s1_sub:'Хто є контактною особою з вашого боку? Ці дані використовуються для спілкування.',
+    am_name:"Повне ім'я", am_email:'Електронна пошта', am_tg:'Telegram username',
+    s2_eyebrow:'Розділ 2 з 7', s2_title:'Інформація про бренд',
     s2_sub:'Розкажіть про ваш продукт. Що точніше — то краще ми оцінимо сумісність.',
     brand_name:'Назва бренду', brand_url:'URL бренду', brand_date:'Дата запуску бренду',
     brand_book:'Брендбук / Документ про продукт',
-    brand_book_hint:'Будь ласка, поділіться посиланням на ваш брендбук <strong>(Google Drive, Dropbox, WeTransfer тощо)</strong>. Документ має включати: прийняті валюти, методи депозиту та виводу, ігровий портфель, опис бонусів, дозволені та заборонені GEO. Формати: <strong>XLSX, CSV, PDF</strong>.',
-    s3_eyebrow:'Розділ 3 з 6', s3_title:'Ліцензія та платформа',
+    brand_book_hint:'Будь ласка, поділіться посиланням на ваш брендбук <strong>(Google Drive, Dropbox, WeTransfer тощо)</strong>. Документ має включати: валюти, методи депозиту та виводу, ігровий портфель, опис бонусів, дозволені та заборонені GEO. Формати: <strong>XLSX, CSV, PDF</strong>.',
+    s3_eyebrow:'Розділ 3 з 7', s3_title:'Ліцензія та платформа',
     s3_sub:'Ліцензування та технологічний стек допомагають оцінити відповідність вимогам.',
     license_label:'Діюча ліцензія', license_na_hint:'Немає ліцензії — поясніть нижче',
-    software_label:'Провайдер платформи', aff_url:'URL афіліатної платформи',
+    software_label:'Whitelabel-платформа', aff_url:'URL афіліатної платформи',
     api_label:'Чи є API для вивантаження даних?', yes:'Так', no:'Ні', in_progress:'В розробці',
     license_explain_ph:'Будь ласка, опишіть ситуацію з ліцензуванням…',
-    software_other_ph:'Вкажіть провайдера…',
-    s4_eyebrow:'Розділ 4 з 6', s4_title:'Цільові GEO',
-    s4_sub:'На яких ринках зосереджений ваш бренд? Виберіть рівні та вкажіть ключові GEO.',
-    tier_label:'Найкраща конверсія / цільовий Tier', geo_specify:'Вкажіть цільові GEO',
-    cr_label:'Середня конверсія (реєстрація → депозит) з SEO-трафіку',
-    cr_hint:'Виберіть діапазон, що найкраще відповідає вашим показникам.',
-    cr_geo_ph:"Необов'язково: вкажіть GEO",
+    software_other_ph:'Вкажіть платформу…',
     fixed_fees_label:'Чи працюєте ви з фіксованими внесками за розміщення у певних блоках сайту та/або топових позиціях?',
     fixed_fees_hint:'Наприклад: featured-позиція, топ-3 на сторінці огляду протягом календарного місяця',
-    ff_yes:'Так, вже працюємо з фіксованими внесками',
-    ff_open:'Готові обговорити',
-    ff_no:'Ні, наразі не розглядаємо',
-    s5_eyebrow:'Розділ 5 з 6', s5_title:'Операція та утримання',
+    ff_yes:'Так, вже працюємо з фіксованими внесками', ff_open:'Готові обговорити', ff_no:'Ні, наразі не розглядаємо',
+    s4_eyebrow:'Розділ 4 з 7', s4_title:'Джерела та цільові GEO',
+    s4_sub:'Розкажіть про структуру трафіку, цільові ринки та умови угоди, які вам підходять.',
+    sources_label:'Цільові джерела трафіку', sources_hint:'Виберіть усі відповідні варіанти.',
+    src_seo:'SEO', src_social:'Social (Meta, TikTok, LinkedIn)', src_aso:'ASO', src_inapp:'In-app',
+    src_ppc:'PPC', src_influence:'Influence', src_email:'Email', src_uac:'UAC', src_native:'Native',
+    tier_label:'Найкраща конверсія / цільовий Tier', geo_specify:'Вкажіть цільові GEO',
+    deal_structure_label:'Бажана структура угоди (SEO-трафік)',
+    cr_label:'Середня конверсія (реєстрація → депозит) — SEO-трафік', cr_hint:'Виберіть найближчий діапазон.',
+    cr_geo_ph:"Необов'язково: вкажіть GEO",
+    cr_social_label:'Середня конверсія (реєстрація → депозит) — Social та інші джерела', cr_social_hint:"Необов'язково.",
+    best_deal_label:'Найкраща пропозиція щодо умов угоди для ваших цільових GEO',
+    best_deal_hint:'Вкажіть конкретний приклад, наприклад: CZ 160 EUR + 40% RevShare',
+    best_deal_ph:'наприклад: CZ 160 EUR + 40% RevShare, PL 120 EUR CPA…',
+    seo_approaches_label:'Прийнятні SEO-підходи', seo_approaches_hint:'Виберіть усі відповідні варіанти.',
+    seo_a1:'Parasite SEO (Reddit, TrustPilot тощо)',
+    seo_a2:'Класичні оглядові / дроп-доменні / EMD / слот-оглядові сайти',
+    seo_a3:'Крос-бренд — перенаправлення користувачів між продуктами',
+    seo_a4:'Моно-бренд — сайт повністю присвячений вашому казино',
+    seo_a4_hint:'Можуть використовуватись брендові ключові слова',
+    seo_approaches_detail_ph:'Розкажіть детальніше про бажані підходи…',
+    ftd_label:'Ідеальний обсяг FTD для прийняття від нового партнера',
+    ftd1:'10–20 FTD', ftd2:'21–50 FTD', ftd3:'50 FTD+', ftd4:'Без верхнього ліміту',
+    s5_eyebrow:'Розділ 5 з 7', s5_title:'Операція та утримання',
     s5_sub:'Розуміння зрілості та CRM-можливостей допомагає оцінити LTV гравців.',
     exp_label:'Як давно існує операція?',
     exp1:'1–2 роки', exp2:'3–5 років', exp3:'5+ років',
@@ -726,8 +764,19 @@ const T = {
     ret4:'Телефонна підтримка місцевою мовою (VIP)', ret5:'SMS / Push-сповіщення',
     ret6:'Програма лояльності / VIP', ret7:'Бонуси за реактивацію', ret8:'Персоналізовані бонуси',
     ret_other_ph:'Інші методи утримання…',
-    s6_eyebrow:'Розділ 6 з 6', s6_title:'Щось іще?',
-    s6_sub:"Необов'язково — поділіться додатковим контекстом, очікуваннями або запитаннями.",
+    payback_label:'Цільовий термін окупності продукту',
+    pb1:'3 місяці', pb2:'6 місяців', pb3:'9 місяців', pb4:'1 рік+',
+    s6_eyebrow:'Розділ 6 з 7', s6_title:'Платежі',
+    s6_sub:'Допоможіть нам зрозуміти, як організовані платежі з вашого боку.',
+    payment_terms_label:'Стандартні умови оплати',
+    payment_method_label:'Бажаний спосіб оплати',
+    pm_crypto:'Крипто (USDT / BTC)', pm_wire:'Банківський переказ (Wire)',
+    pm_bank:'Банківський переказ (SEPA)', pm_other:'Інше — вкажіть',
+    payment_method_other_ph:'Вкажіть спосіб оплати…',
+    io_label:'Чи потрібне підписання Insertion Order (IO)?',
+    io_per_request:'За запитом',
+    s7_eyebrow:'Розділ 7 з 7', s7_title:'Щось іще?',
+    s7_sub:"Необов'язково — поділіться додатковим контекстом, очікуваннями або запитаннями.",
     comment_label:'Коментарі',
     comment_ph:"Наприклад: бажані типи угод, конкретні GEO, очікувані обсяги трафіку…",
     submit:'Надіслати заявку', back:'Назад', next:'Продовжити',
@@ -738,17 +787,11 @@ const T = {
   }
 };
 
-/* =============================================================
-   STATE
-   ============================================================= */
 let lang = 'en';
 let currentStep = 0;
-const TOTAL = 6;
+const TOTAL = 7;
 const selectedTiers = new Set();
 
-/* =============================================================
-   LANG
-   ============================================================= */
 function applyLang(l) {
   lang = l;
   document.querySelectorAll('.lang-btn').forEach(function(b){
@@ -765,9 +808,6 @@ function applyLang(l) {
   document.documentElement.lang = l;
 }
 
-/* =============================================================
-   DOTS & PROGRESS
-   ============================================================= */
 function renderDots() {
   var c = document.getElementById('dots');
   c.innerHTML = '';
@@ -785,9 +825,6 @@ function setProgress(n) {
   document.getElementById('progressBar').style.width = pct + '%';
 }
 
-/* =============================================================
-   NAVIGATION
-   ============================================================= */
 function goStep(n) {
   document.querySelectorAll('.step').forEach(function(s){ s.classList.remove('active'); });
   var target = document.getElementById(n > TOTAL ? 'step-success' : 'step-' + n);
@@ -798,9 +835,6 @@ function goStep(n) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* =============================================================
-   VALIDATION
-   ============================================================= */
 function setFieldError(fieldId, hasError) {
   var f = document.getElementById(fieldId);
   if (!f) return;
@@ -822,16 +856,24 @@ function validate(step) {
     setFieldError(wrapId, bad);
     if (bad) ok = false;
   }
-  function urlField(wrapId, inputId, optional) {
+  function urlField(wrapId, inputId) {
     var val = (document.getElementById(inputId) || {}).value || '';
-    var bad = !optional && (!val.trim() || !/^https?:\/\/.+/.test(val));
+    var bad = !val.trim() || !/^https?:\/\/.+/.test(val);
     setFieldError(wrapId, bad);
     if (bad) ok = false;
   }
   function groupReq(groupId) {
     var el = document.getElementById(groupId);
-    var checked = el ? el.querySelector('input:checked') : null;
+    if (!el) return;
+    var checked = el.querySelector('input:checked');
     if (!checked) { el.classList.add('group-error'); ok = false; }
+    else el.classList.remove('group-error');
+  }
+  function checkboxGroupReq(groupId) {
+    var el = document.getElementById(groupId);
+    if (!el) return;
+    var checked = el.querySelectorAll('input:checked').length;
+    if (checked === 0) { el.classList.add('group-error'); ok = false; }
     else el.classList.remove('group-error');
   }
 
@@ -851,61 +893,74 @@ function validate(step) {
     urlField('f-aff-url', 'aff_url');
   }
   if (step === 4) {
+    checkboxGroupReq('sources-group');
     if (selectedTiers.size === 0) {
       document.getElementById('tier-error').style.display = 'block'; ok = false;
     } else {
       document.getElementById('tier-error').style.display = 'none';
     }
     reqField('f-geo-list', 'geo_list');
+    groupReq('deal-structure-group');
+    reqField('f-best-deal', 'best_deal');
+    checkboxGroupReq('seo-approaches-group');
+    groupReq('ftd-group');
   }
   if (step === 5) {
     groupReq('exp-group');
-    var retChecked = document.querySelectorAll('#retention-group input:checked').length;
-    var rg = document.getElementById('retention-group');
-    if (retChecked === 0) { rg.classList.add('group-error'); ok = false; }
-    else rg.classList.remove('group-error');
+    checkboxGroupReq('retention-group');
   }
-
+  if (step === 6) {
+    groupReq('payment-terms-group');
+    groupReq('payment-method-group');
+  }
   return ok;
 }
 
-/* =============================================================
-   SUBMIT
-   ============================================================= */
 function collectData() {
   function v(id) { return (document.getElementById(id) || {}).value || ''; }
   function radio(name) { var el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
-  var retention = Array.from(document.querySelectorAll('#retention-group input:checked')).map(function(i){ return i.value; }).join(', ');
+  function checks(groupId) { return Array.from(document.querySelectorAll('#' + groupId + ' input:checked')).map(function(i){ return i.value; }).join(', '); }
   return {
-    'Submitted At': new Date().toISOString(),
-    'Language': lang.toUpperCase(),
-    'AM Name': v('am_name'),
-    'AM Email': v('am_email'),
-    'AM Telegram': v('am_tg'),
-    'Brand Name': v('brand_name'),
-    'Brand URL': v('brand_url'),
-    'Brand Launch Date': v('brand_date'),
-    'Brand Book Link': v('brand_book_link'),
-    'License': radio('license'),
-    'License Note': v('license_explain_txt'),
-    'Software': radio('software'),
-    'Software Other': v('software_other_txt'),
-    'Affiliate URL': v('aff_url'),
-    'API': radio('api'),
-    'Fixed Fees': radio('fixed_fees'),
-    'Tiers': Array.from(selectedTiers).join(', '),
-    'GEOs': v('geo_list'),
-    'Avg CR': radio('cr'),
-    'CR GEO Note': v('cr_geo'),
-    'Experience': radio('experience'),
-    'Retention': retention,
-    'Retention Other': v('retention_other'),
-    'Comment': v('comment')
+    'Submitted At':       new Date().toISOString(),
+    'Language':           lang.toUpperCase(),
+    'AM Name':            v('am_name'),
+    'AM Email':           v('am_email'),
+    'AM Telegram':        v('am_tg'),
+    'Brand Name':         v('brand_name'),
+    'Brand URL':          v('brand_url'),
+    'Brand Launch Date':  v('brand_date'),
+    'Brand Book Link':    v('brand_book_link'),
+    'License':            radio('license'),
+    'License Note':       v('license_explain_txt'),
+    'Whitelabel Software':radio('software'),
+    'Software Other':     v('software_other_txt'),
+    'Affiliate URL':      v('aff_url'),
+    'API':                radio('api'),
+    'Fixed Fees':         radio('fixed_fees'),
+    'Targeted Sources':   checks('sources-group'),
+    'Tiers':              Array.from(selectedTiers).join(', '),
+    'GEOs':               v('geo_list'),
+    'Deal Structure':     radio('deal_structure'),
+    'Avg CR (SEO)':       radio('cr_seo'),
+    'CR SEO GEO Note':    v('cr_geo'),
+    'Avg CR (Social+)':   radio('cr_social'),
+    'Best Deal Proposal': v('best_deal'),
+    'SEO Approaches':     checks('seo-approaches-group'),
+    'SEO Approaches Detail': v('seo_approaches_detail'),
+    'FTD Amount':         radio('ftd_amount'),
+    'Experience':         radio('experience'),
+    'Retention':          checks('retention-group'),
+    'Retention Other':    v('retention_other'),
+    'Payback Period':     radio('payback_period'),
+    'Payment Terms':      radio('payment_terms'),
+    'Payment Method':     radio('payment_method'),
+    'Payment Method Other': v('payment_method_other_txt'),
+    'IO Required':        radio('io_required'),
+    'Comment':            v('comment')
   };
 }
 
 async function submitForm() {
-  if (!validate(6)) { showNotif(T[lang].err_required); return; }
   var btn = document.getElementById('submit-btn');
   btn.classList.add('loading');
   btn.disabled = true;
@@ -920,9 +975,6 @@ async function sendSheets(data) {
   try { await fetch(SHEET_URL, { method:'POST', body: JSON.stringify(data) }); } catch(e) {}
 }
 
-/* =============================================================
-   NOTIFICATION
-   ============================================================= */
 function showNotif(msg) {
   var n = document.getElementById('notif');
   document.getElementById('notif-text').textContent = msg;
@@ -930,25 +982,18 @@ function showNotif(msg) {
   setTimeout(function(){ n.classList.remove('show'); }, 3000);
 }
 
-/* =============================================================
-   WIRE UP ALL EVENTS (no inline onclick)
-   ============================================================= */
 document.addEventListener('DOMContentLoaded', function() {
 
-  // lang buttons
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
   });
 
-  // start button
   document.getElementById('btn-start').addEventListener('click', function() { goStep(1); });
 
-  // back buttons (data-goto)
   document.querySelectorAll('[data-goto]').forEach(function(btn) {
     btn.addEventListener('click', function() { goStep(parseInt(btn.dataset.goto)); });
   });
 
-  // next buttons (data-next)
   document.querySelectorAll('[data-next]').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var cur = parseInt(btn.dataset.next);
@@ -957,10 +1002,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // submit
   document.getElementById('submit-btn').addEventListener('click', submitForm);
 
-  // radio choice items
   document.querySelectorAll('.choice-item[data-radio]').forEach(function(item) {
     item.addEventListener('click', function() {
       var name = item.dataset.radio;
@@ -971,22 +1014,20 @@ document.addEventListener('DOMContentLoaded', function() {
       item.classList.add('selected');
       var inp = item.querySelector('input[type=radio]');
       if (inp) inp.checked = true;
-      // conditional reveals
       if (name === 'license') {
-        var ex = document.getElementById('license-explain');
-        ex.classList.toggle('visible', val === 'N/A' || val === 'Other');
+        document.getElementById('license-explain').classList.toggle('visible', val === 'N/A' || val === 'Other');
       }
       if (name === 'software') {
-        var sw = document.getElementById('software-explain');
-        sw.classList.toggle('visible', val === 'Other');
+        document.getElementById('software-explain').classList.toggle('visible', val === 'Other');
       }
-      // clear group error
+      if (name === 'payment_method') {
+        document.getElementById('payment-method-explain').classList.toggle('visible', val === 'Other');
+      }
       var grp = document.getElementById(name + '-group');
       if (grp) grp.classList.remove('group-error');
     });
   });
 
-  // tier pills
   document.querySelectorAll('.tier-pill').forEach(function(pill) {
     pill.addEventListener('click', function() {
       var tier = pill.dataset.tier;
@@ -995,18 +1036,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // checkboxes
   document.querySelectorAll('[data-checkbox]').forEach(function(item) {
     item.addEventListener('click', function() {
       item.classList.toggle('selected');
       var cb = item.querySelector('input[type=checkbox]');
       if (cb) cb.checked = item.classList.contains('selected');
-      var rg = document.getElementById('retention-group');
-      if (rg) rg.classList.remove('group-error');
+      var grp = item.closest('.check-grid, .choice-group');
+      if (grp) grp.classList.remove('group-error');
     });
   });
 
-  // init
   applyLang('en');
   renderDots();
   setProgress(0);
@@ -1014,3 +1053,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
