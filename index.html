@@ -105,9 +105,6 @@ select option{background:#1a1a1c}
 @keyframes spin{to{transform:rotate(360deg)}}
 .btn.loading .spinner{display:block}
 .btn.loading .btn-text{display:none}
-.notif{position:fixed;bottom:24px;right:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;display:flex;align-items:center;gap:12px;font-size:14px;z-index:999;transform:translateY(120%);transition:transform .3s;max-width:320px}
-.notif.show{transform:translateY(0)}
-.notif .dot-notif{width:8px;height:8px;min-width:8px;border-radius:50%;background:var(--accent)}
 .group-error{outline:1px solid var(--error);border-radius:var(--radius-sm)}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -282,7 +279,7 @@ select option{background:#1a1a1c}
     <div class="section-divider"></div>
 
     <div class="field">
-      <label><span data-k="fixed_fees_label">Do you work with fixed fees for listing on specific site blocks and/or top positions?</span></label>
+      <label><span data-k="fixed_fees_label">Do you work with fixed fees for listing on specific site blocks and/or top positions?</span><span class="req">*</span></label>
       <p class="hint" data-k="fixed_fees_hint">e.g. featured placement, top-3 position on a review page for a calendar month</p>
       <div class="choice-group" id="fixed-fees-group" style="margin-top:8px">
         <label class="choice-item" data-radio="fixed_fees" data-val="Yes"><input type="radio" name="fixed_fees" value="Yes"><span class="choice-label" data-k="ff_yes">Yes, we already work with fixed fees</span></label>
@@ -353,7 +350,7 @@ select option{background:#1a1a1c}
 
     <div class="field-group two-col">
       <div class="field">
-        <label data-k="cr_label">Avg. CR (reg → deposit) — SEO traffic</label>
+        <label><span data-k="cr_label">Avg. CR (reg → deposit) — SEO traffic</span><span class="req">*</span></label>
         <p class="hint" data-k="cr_hint">Select the closest range.</p>
         <div class="choice-group" id="cr-seo-group" style="margin-top:8px">
           <label class="choice-item" data-radio="cr_seo" data-val="&lt;5%"><input type="radio" name="cr_seo" value="<5%"><span class="choice-label">&lt;5%</span></label>
@@ -365,8 +362,8 @@ select option{background:#1a1a1c}
         <input type="text" id="cr_geo" placeholder="Optional: specify GEO" data-ph="cr_geo_ph" style="margin-top:10px">
       </div>
       <div class="field">
-        <label data-k="cr_social_label">Avg. CR (reg → deposit) — Social &amp; other sources</label>
-        <p class="hint" data-k="cr_social_hint">Optional.</p>
+        <label><span data-k="cr_social_label">Avg. CR (reg → deposit) — Social &amp; other sources</span><span class="req">*</span></label>
+        <p class="hint" data-k="cr_social_hint">Select the closest range.</p>
         <div class="choice-group" id="cr-social-group" style="margin-top:8px">
           <label class="choice-item" data-radio="cr_social" data-val="&lt;5%"><input type="radio" name="cr_social" value="<5%"><span class="choice-label">&lt;5%</span></label>
           <label class="choice-item" data-radio="cr_social" data-val="5–10%"><input type="radio" name="cr_social" value="5–10%"><span class="choice-label">5–10%</span></label>
@@ -455,7 +452,7 @@ select option{background:#1a1a1c}
     <div class="section-divider"></div>
 
     <div class="field">
-      <label data-k="payback_label">Target payback period on product</label>
+      <label><span data-k="payback_label">Target payback period on product</span><span class="req">*</span></label>
       <div class="choice-group" id="payback-group" style="flex-direction:row;flex-wrap:wrap;gap:8px;margin-top:4px">
         <label class="choice-item" data-radio="payback_period" data-val="3 months" style="flex:1;min-width:120px"><input type="radio" name="payback_period" value="3 months"><span class="choice-label" data-k="pb1">3 months</span></label>
         <label class="choice-item" data-radio="payback_period" data-val="6 months" style="flex:1;min-width:120px"><input type="radio" name="payback_period" value="6 months"><span class="choice-label" data-k="pb2">6 months</span></label>
@@ -551,8 +548,6 @@ select option{background:#1a1a1c}
 </div>
 </div>
 
-<div class="notif" id="notif"><div class="dot-notif"></div><span id="notif-text"></span></div>
-
 <script>
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwQf3JmwR8iE71V4q7m_vjW72XXgj4QoFiqcf-JCjaivw4z1XKTSFh_Kor1HsDWqYciBw/exec';
 
@@ -590,7 +585,7 @@ const T = {
     deal_structure_label:'Preferred deal structure (SEO source)',
     cr_label:'Avg. CR (reg → deposit) — SEO traffic', cr_hint:'Select the closest range.',
     cr_geo_ph:'Optional: specify GEO',
-    cr_social_label:'Avg. CR (reg → deposit) — Social &amp; other sources', cr_social_hint:'Optional.',
+    cr_social_label:'Avg. CR (reg → deposit) — Social &amp; other sources', cr_social_hint:'Select the closest range.',
     best_deal_label:'Best deal you would propose for your target GEOs',
     best_deal_hint:'Provide a specific example, e.g. CZ 160 EUR + 40% RevShare',
     best_deal_ph:'e.g. CZ 160 EUR + 40% RevShare, PL 120 EUR CPA…',
@@ -666,7 +661,7 @@ const T = {
     deal_structure_label:'Предпочтительная структура сделки (SEO-трафик)',
     cr_label:'Средняя конверсия (рег → депозит) — SEO-трафик', cr_hint:'Выберите ближайший диапазон.',
     cr_geo_ph:'Необязательно: укажите GEO',
-    cr_social_label:'Средняя конверсия (рег → депозит) — Social и другие источники', cr_social_hint:'Необязательно.',
+    cr_social_label:'Средняя конверсия (рег → депозит) — Social и другие источники', cr_social_hint:'Выберите ближайший диапазон.',
     best_deal_label:'Лучшие условия сделки для ваших целевых GEO',
     best_deal_hint:'Укажите конкретный пример, например: CZ 160 EUR + 40% RevShare',
     best_deal_ph:'например: CZ 160 EUR + 40% RevShare, PL 120 EUR CPA…',
@@ -742,7 +737,7 @@ const T = {
     deal_structure_label:'Бажана структура угоди (SEO-трафік)',
     cr_label:'Середня конверсія (реєстрація → депозит) — SEO-трафік', cr_hint:'Виберіть найближчий діапазон.',
     cr_geo_ph:"Необов'язково: вкажіть GEO",
-    cr_social_label:'Середня конверсія (реєстрація → депозит) — Social та інші джерела', cr_social_hint:"Необов'язково.",
+    cr_social_label:'Середня конверсія (реєстрація → депозит) — Social та інші джерела', cr_social_hint:'Виберіть найближчий діапазон.',
     best_deal_label:'Найкраща пропозиція щодо умов угоди для ваших цільових GEO',
     best_deal_hint:'Вкажіть конкретний приклад, наприклад: CZ 160 EUR + 40% RevShare',
     best_deal_ph:'наприклад: CZ 160 EUR + 40% RevShare, PL 120 EUR CPA…',
@@ -891,6 +886,7 @@ function validate(step) {
     groupReq('license-group');
     groupReq('software-group');
     urlField('f-aff-url', 'aff_url');
+    groupReq('fixed-fees-group');
   }
   if (step === 4) {
     checkboxGroupReq('sources-group');
@@ -904,10 +900,13 @@ function validate(step) {
     reqField('f-best-deal', 'best_deal');
     checkboxGroupReq('seo-approaches-group');
     groupReq('ftd-group');
+    groupReq('cr-seo-group');
+    groupReq('cr-social-group');
   }
   if (step === 5) {
     groupReq('exp-group');
     checkboxGroupReq('retention-group');
+    groupReq('payback-group');
   }
   if (step === 6) {
     groupReq('payment-terms-group');
@@ -975,13 +974,6 @@ async function sendSheets(data) {
   try { await fetch(SHEET_URL, { method:'POST', body: JSON.stringify(data) }); } catch(e) {}
 }
 
-function showNotif(msg) {
-  var n = document.getElementById('notif');
-  document.getElementById('notif-text').textContent = msg;
-  n.classList.add('show');
-  setTimeout(function(){ n.classList.remove('show'); }, 3000);
-}
-
 document.addEventListener('DOMContentLoaded', function() {
 
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
@@ -997,8 +989,12 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('[data-next]').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var cur = parseInt(btn.dataset.next);
-      if (validate(cur)) goStep(cur + 1);
-      else showNotif(T[lang].err_required);
+      if (validate(cur)) {
+        goStep(cur + 1);
+      } else {
+        var firstError = document.querySelector('#step-' + cur + ' .has-error, #step-' + cur + ' .group-error');
+        if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     });
   });
 
@@ -1037,10 +1033,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.querySelectorAll('[data-checkbox]').forEach(function(item) {
-    item.addEventListener('click', function() {
-      item.classList.toggle('selected');
-      var cb = item.querySelector('input[type=checkbox]');
-      if (cb) cb.checked = item.classList.contains('selected');
+    var cb = item.querySelector('input[type=checkbox]');
+    if (!cb) return;
+    cb.addEventListener('change', function() {
+      item.classList.toggle('selected', cb.checked);
       var grp = item.closest('.check-grid, .choice-group');
       if (grp) grp.classList.remove('group-error');
     });
@@ -1053,4 +1049,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-
